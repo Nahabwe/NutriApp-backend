@@ -73,7 +73,13 @@ DJOSER = {
         'user_create': 'djoser.serializers.UserCreateSerializer',
         'user': 'djoser.serializers.UserSerializer',
         'current_user': 'djoser.serializers.UserSerializer',
-    }
+    },
+    'PERMISSIONS': {
+       'user_create': ['rest_framework.permissions.AllowAny'],  # ✅ allow anyone to sign up
+        'user': ['rest_framework.permissions.IsAuthenticated'],
+        'user_list': ['rest_framework.permissions.IsAdminUser'],
+        'user_delete': ['rest_framework.permissions.IsAuthenticated'],
+    },
 }
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -116,17 +122,6 @@ WSGI_APPLICATION = 'diabetes_backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.postgresql',
-    #     'NAME': 'diabetesdb',
-    #     'USER': 'diabetesuser',
-    #     'PASSWORD': 'diabetes123',
-    #     'HOST': 'localhost',
-    #     'PORT': '5432',
-    # }
- 
-}
 
 DATABASES = {
     'default': dj_database_url.config(default=os.environ.get("DATABASE_URL"))
