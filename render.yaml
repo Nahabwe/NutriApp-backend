@@ -11,8 +11,13 @@ services:
         fromDatabase:
           name: diabetes-db
           property: connectionString
-databases:
-  - name: diabetes-db
-    plan: free
+# databases:
+#   - name: diabetes-db
+#     plan: free
+
+
+
+# i will add DATABASE_URL later
+    
  
 
