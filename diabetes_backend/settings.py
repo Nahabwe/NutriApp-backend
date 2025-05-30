@@ -5,6 +5,8 @@ from datetime import timedelta
 import dj_database_url
 import os
 import environ
+import logging
+
 env =environ.Env(
     DEBUG=(bool,False)
 )
@@ -24,7 +26,19 @@ SECRET_KEY = env('SECRET_KEY')
 DEBUG = env('DEBUG')
 
 
-
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'root': {
+        'handlers': ['console'],
+        'level': 'DEBUG',
+    },
+}
 
 # Application definition
 
