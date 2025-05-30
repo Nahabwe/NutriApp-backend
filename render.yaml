@@ -13,3 +13,6 @@ services:
           property: connectionString
 databases:
   - name: diabetes-db
+    plan: free
+ 
+
