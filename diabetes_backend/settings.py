@@ -189,7 +189,17 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
                          
-ALLOWED_HOSTS = [os.environ.get('RENDER_EXTERNAL_HOSTNAME'), 'localhost','127.0.0.1','localhost:5173', 'localhost:3000', 'localhost:8000', ]
+# ALLOWED_HOSTS = [os.environ.get('RENDER_EXTERNAL_HOSTNAME'), 'localhost','127.0.0.1','localhost:5173', 'localhost:3000', 'localhost:8000', ]
+
+ALLOWED_HOSTS = [
+    'web-production-2e69c.up.railway.app',
+    'localhost',
+    '127.0.0.1',
+    'localhost:5173',
+    'localhost:3000',
+    'localhost:8000',
+]
+
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",   # React default
